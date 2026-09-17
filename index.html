@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadernos Estação | Revista Interdisciplinar</title>
+    
+    <!-- Metadados Acadêmicos Básicos (Google Scholar / Dublin Core) -->
+    <meta name="citation_journal_title" content="Cadernos Estação">
+    <meta name="citation_issn" content="[ISSN em solicitação]">
+    <meta name="citation_publisher" content="KBOOKS Publicações & Ensino">
+    <meta name="description" content="Revista interdisciplinar dedicada à convergência entre tecnologia, saúde, ciências ambientais e humanidades.">
+
+    <style>
+        :root {
+            --primary: #2b2b2b;
+            --secondary: #444444;
+            --accent: #1a1a1a;
+            --bg: #ffffff;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #555555;
+            --border: #cccccc;
+            --border-light: #e0e0e0;
+            --tag-bg: #f4f4f4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        /* HEADER FINO E COMPACTO EM EM TONS DE CINZA */
+        header {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 3px solid #1a1a1a;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .header-titles {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        header p.subtitle {
+            font-size: 0.85rem;
+            color: #d8d8d8;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .meta-badges {
+            font-size: 0.75rem;
+            color: #bbbbbb;
+            white-space: nowrap;
+        }
+
+        /* CABEÇALHO DE JORNAL (DATA & RELÓGIO DENTRO DA BARRA) */
+        .journal-datebar {
+            background-color: #f0f0f0;
+            border-bottom: 1px solid var(--border);
+            padding: 0.35rem 1.5rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #333333;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .journal-datebar-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* NAVEGAÇÃO COMPACTA */
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1.25rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 1.5rem auto 2rem;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .issue-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            background: #f8f8f8;
+            border: 1px solid var(--border-light);
+            padding: 1.2rem;
+        }
+
+        .issue-cover {
+            width: 120px;
+            height: 170px;
+            background: var(--primary);
+            color: #ffffff;
+            border: 1px solid #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0.8rem;
+        }
+
+        .issue-info h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .issue-info p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #ffffff;
+            color: var(--primary);
+        }
+
+        .article-card {
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 0;
+        }
+
+        .article-card:last-child {
+            border-bottom: none;
+        }
+
+        .article-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            background: var(--tag-bg);
+            color: var(--secondary);
+            padding: 2px 6px;
+            margin-bottom: 0.3rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .article-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .article-author {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .article-links a {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .article-links a:hover {
+            color: var(--text-muted);
+        }
+
+        .manifesto-box {
+            font-style: italic;
+            background: #f8f8f8;
+            border-left: 3px solid var(--primary);
+            padding: 1rem;
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: #dddddd;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.8rem;
+            margin-top: 2.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        @media (max-width: 700px) {
+            .header-container { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+            .header-titles { flex-direction: column; gap: 0.1rem; }
+            .journal-datebar-container { flex-direction: column; text-align: center; gap: 0.2rem; }
+            .issue-header { flex-direction: column; text-align: center; }
+            .issue-cover { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER EM CINZA -->
+    <header>
+        <div class="header-container">
+            <div class="header-titles">
+                <h1>Cadernos Estação</h1>
+                <p class="subtitle">Revista Interdisciplinar de Ciência, Tecnologia e Humanidades</p>
+            </div>
+            <div class="meta-badges">
+                <span>ISSN: [Em solicitação]</span> • <span>Semestral</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- BARRA DE DATA E RELÓGIO (ESTILO JORNAL) -->
+    <div class="journal-datebar">
+        <div class="journal-datebar-container">
+            <div>RIO DE JANEIRO, <span id="journal-date-str">QUINTA-FEIRA, 17 DE SETEMBRO DE 2026</span> — ANO I</div>
+            <div>HORA LOCAL: <span id="journal-clock">00:00:00</span></div>
+        </div>
+    </div>
+
+    <!-- NAVEGAÇÃO COM ABA BLOG -->
+    <nav>
+        <div class="nav-container">
+            <a href="#edicao-atual">Edição Atual</a>
+            <a href="#sobre">Sobre o Periódico</a>
+            <a href="#expediente">Corpo Editorial</a>
+            <a href="#submissoes">Submissões</a>
+            <a href="https://eap42.blog" target="_blank" rel="noopener">Blog (Estação AP42) ↗</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- EDIÇÃO ATUAL -->
+        <section id="edicao-atual">
+            <h2>Edição Atual — Vol. 1, Nº 1 (2026)</h2>
+            
+            <div class="issue-header">
+                <div class="issue-cover">
+                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">Cadernos Estação</span>
+                    <strong style="font-size: 1rem; margin: 0.4rem 0;">Vol. 1<br>Nº 1</strong>
+                    <span style="font-size: 0.65rem;">jul./dez. 2026</span>
+                </div>
+                <div class="issue-info">
+                    <h3>Dossiê Inaugural: Agência Humana, Técnica e Cuidado</h3>
+                    <p>Publicado em: 25 de Agosto de 2026 | Acesso Aberto (Diamond Open Access)</p>
+                    <a href="BONECA-REVISTA-ESTACAO.pdf" class="btn-download">Baixar Edição Completa (PDF)</a>
+                </div>
+            </div>
+
+            <!-- SUMÁRIO DA EDIÇÃO -->
+            <div class="toc">
+                <!-- Editorial -->
+                <div class="article-card">
+                    <span class="article-tag">Editorial</span>
+                    <div class="article-title">Carta ao Leitor: Pela Reintegração dos Saberes e a Democratização do Conhecimento</div>
+                    <div class="article-author">Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="#">[ Ler Texto / PDF ]</a>
+                    </div>
+                </div>
+
+                <!-- Ensaio Principal -->
+                <div class="article-card">
+                    <span class="article-tag">Ensaio</span>
+                    <div class="article-title">O Existencialismo Ainda é um Humanismo: A Escrita e a Autenticidade na Era da IA</div>
+                    <div class="article-author">Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="#">[ Ler Ensaio / PDF ]</a>
+                    </div>
+                </div>
+
+                <!-- Entrevista Internacional -->
+                <div class="article-card">
+                    <span class="article-tag">Entrevista Especial</span>
+                    <div class="article-title">Human-Centered AI, Criatividade e Superferramentas: Um Diálogo com Ben Shneiderman</div>
+                    <div class="article-author">Ben Shneiderman; Entrevistador: Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="#">[ Ler Entrevista (PT/EN) / PDF ]</a>
+                    </div>
+                </div>
+
+                <!-- Artigo Farmacêutico -->
+                <div class="article-card">
+                    <span class="article-tag">Relato de Experiência / Saúde</span>
+                    <div class="article-title">O Cuidado Farmacêutico e a Prática Clínica no Cotidiano Comunitário</div>
+                    <div class="article-author">Luis Gustavo Alves Reinés da Silva</div>
+                    <div class="article-links">
+                        <a href="#">[ Ler Artigo / PDF ]</a>
+                    </div>
+                </div>
+
+                <!-- Entrevista STEM -->
+                <div class="article-card">
+                    <span class="article-tag">Diálogos em STEM</span>
+                    <div class="article-title">Mulheres em STEM, Educação Maker e Sustentabilidade</div>
+                    <div class="article-author">Viviane Japiassú Viana; Entrevistador: Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="#">[ Ler Entrevista / PDF ]</a>
+                    </div>
+                </div>
+
+                <!-- Tira / Arte Sequencial -->
+                <div class="article-card">
+                    <span class="article-tag">Arte Sequencial Clássica</span>
+                    <div class="article-title">Krazy Kat: Filosofia e Nonsense em Quadrinhos (Tradução e Adaptação)</div>
+                    <div class="article-author">George Herriman; Tradução: Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="#">[ Ver Tira / PDF ]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE A REVISTA -->
+        <section id="sobre">
+            <h2>Sobre a Revista</h2>
+            <p><strong>Cadernos Estação</strong> é um periódico interdisciplinar independente dedicado à publicação de ensaios, pesquisas originais, relatos de experiência, entrevistas e resenhas críticas. Nosso propósito é construir pontes entre a ciência da computação, a saúde pública, a educação e as humanidades.</p>
+            
+            <div class="manifesto-box">
+                "A máquina calcula o provável e reorganiza o já dito; o ser humano é aquele que hesita, que experimenta o atrito da realidade e que ousa o desvio criativo."
+            </div>
+
+            <p>Adotamos a política de <strong>Acesso Aberto Diamante (Diamond Open Access)</strong>: nenhum valor é cobrado de autores para submissão ou publicação, e todos os conteúdos são de livre acesso e leitura para a comunidade acadêmica e o público em geral.</p>
+        </section>
+
+        <!-- EXPEDIENTE -->
+        <section id="expediente">
+            <h2>Corpo Editorial e Expediente</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><strong>Editor-Chefe:</strong> Antonio Paulo Alves Carvalho</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Conselho Editorial:</strong> Prof. Luis Gustavo Alves Reinés da Silva (UNIAN) | Profa. Viviane Japiassú Viana (UVA)</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Chancela Editorial:</strong> KBOOKS Publicações & Ensino</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Periodicidade:</strong> Semestral (Julho / Dezembro)</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Localidade:</strong> São Gonçalo, Rio de Janeiro – Brasil</li>
+                <li><strong>Contato Editorial:</strong> submissoes@journalestacao.lat</li>
+            </ul>
+        </section>
+
+        <!-- SUBMISSÕES -->
+        <section id="submissoes">
+            <h2>Chamada de Trabalhos (Call for Papers) — Vol. 1, Nº 2</h2>
+            <p>Recebemos em fluxo contínuo submissões de ensaios, artigos de revisão, relatos de experiência docente/clínica e resenhas nas seguintes áreas:</p>
+            <ul style="margin: 0.8rem 0 0.8rem 1.2rem;">
+                <li>Interação Humano-Computador, Inteligência Artificial e Sociedade</li>
+                <li>Práticas Farmacêuticas, Atenção Primária e Saúde Coletiva</li>
+                <li>Educação Maker, Inovação Pedagógica e Divulgação Científica</li>
+                <li>Estudos Literários, Teoria Crítica e Filosofia Contemporânea</li>
+            </ul>
+            <p>Os originais devem ser enviados no formato `.docx` ou `.odt` para o e-mail: <strong>submissoes@journalestacao.lat</strong>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Cadernos Estação</strong> © 2026 — Publicado por <strong>KBOOKS Publicações & Ensino</strong>.</p>
+        <p>Distribuído sob licença Creative Commons Atribuição 4.0 Internacional (CC BY 4.0).</p>
+        <p style="margin-top: 0.4rem; font-size: 0.75rem; color: #bbbbbb;">www.journalestacao.lat</p>
+    </footer>
+
+    <!-- SCRIPT DO RELÓGIO E DATA DINÂMICA (ESTILO IMPRENSA) -->
+    <script>
+        function updateJournalClock() {
+            const now = new Date();
+            
+            // Formatador de data por extenso
+            const optionsDate = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            let dateStr = now.toLocaleDateString('pt-BR', optionsDate).toUpperCase();
+            
+            // Formatador de horas HH:MM:SS
+            let timeStr = now.toLocaleTimeString('pt-BR');
+            
+            document.getElementById('journal-date-str').textContent = dateStr;
+            document.getElementById('journal-clock').textContent = timeStr;
+        }
+
+        // Atualiza a cada segundo
+        setInterval(updateJournalClock, 1000);
+        updateJournalClock();
+    </script>
+
+</body>
+</html>
