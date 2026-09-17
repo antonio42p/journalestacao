@@ -38,11 +38,13 @@
             line-height: 1.65;
         }
 
-        /* HEADER FINO E COMPACTO EM EM TONS DE CINZA */
+        /* HEADER COM IMAGEM DO PALÁCIO DO CATETE DE FUNDO */
         header {
-            background-color: var(--primary);
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), 
+                        url('leogaleno-catete-palace-499001.jpg') center/cover no-repeat;
             color: #ffffff;
-            padding: 0.8rem 1.5rem;
+            padding: 2.5rem 1.5rem 1.5rem;
             border-bottom: 3px solid #1a1a1a;
         }
 
@@ -50,39 +52,51 @@
             max-width: 900px;
             margin: 0 auto;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.8rem;
         }
 
         .header-titles {
             display: flex;
-            align-items: baseline;
-            gap: 0.75rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 0.2rem;
         }
 
         header h1 {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             margin: 0;
-            white-space: nowrap;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
         header p.subtitle {
-            font-size: 0.85rem;
-            color: #d8d8d8;
+            font-size: 0.9rem;
+            color: #e0e0e0;
             font-style: italic;
             margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
         .meta-badges {
             font-size: 0.75rem;
-            color: #bbbbbb;
+            color: #dddddd;
             white-space: nowrap;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .header-credit {
+            position: absolute;
+            top: 6px;
+            right: 15px;
+            font-size: 0.65rem;
+            color: #cccccc;
+            background: rgba(0,0,0,0.5);
+            padding: 2px 6px;
+            border-radius: 2px;
         }
 
         /* CABEÇALHO DE JORNAL (DATA & RELÓGIO DENTRO DA BARRA) */
@@ -107,7 +121,7 @@
             gap: 0.5rem;
         }
 
-        /* NAVEGAÇÃO COMPACTA */
+        /* NAVEGAÇÃO COMPACTA COM SELETOR DE IDIOMAS */
         nav {
             background: #ffffff;
             border-bottom: 1px solid var(--border);
@@ -122,7 +136,14 @@
             margin: 0 auto;
             display: flex;
             gap: 1.25rem;
-            justify-content: flex-start;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
             flex-wrap: wrap;
         }
 
@@ -136,6 +157,31 @@
 
         nav a:hover {
             opacity: 0.6;
+        }
+
+        /* SELETOR DE IDIOMAS */
+        .lang-select {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .lang-select a {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-muted);
+            padding: 1px 4px;
+            border: 1px solid transparent;
+        }
+
+        .lang-select a.active {
+            color: #000000;
+            border-color: var(--border);
+            background: #f0f0f0;
         }
 
         main {
@@ -172,18 +218,11 @@
             padding: 1.2rem;
         }
 
-        .issue-cover {
-            width: 120px;
-            height: 170px;
-            background: var(--primary);
-            color: #ffffff;
-            border: 1px solid #1a1a1a;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0.8rem;
+        .issue-cover-img {
+            width: 130px;
+            height: auto;
+            border: 1px solid var(--border);
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
         }
 
         .issue-info h3 {
@@ -289,14 +328,16 @@
             .header-titles { flex-direction: column; gap: 0.1rem; }
             .journal-datebar-container { flex-direction: column; text-align: center; gap: 0.2rem; }
             .issue-header { flex-direction: column; text-align: center; }
-            .issue-cover { margin: 0 auto; }
+            .issue-cover-img { margin: 0 auto; }
+            nav .nav-container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER EM CINZA -->
+    <!-- HEADER COM IMAGEM DE CAPA DO PALÁCIO DO CATETE E CRÉDITO -->
     <header>
+        <div class="header-credit">Foto: Léo Galeano (Palácio do Catete)</div>
         <div class="header-container">
             <div class="header-titles">
                 <h1>Cadernos Estação</h1>
@@ -316,28 +357,32 @@
         </div>
     </div>
 
-    <!-- NAVEGAÇÃO COM ABA BLOG -->
+    <!-- NAVEGAÇÃO COM ABA BLOG E SELETOR DE IDIOMAS -->
     <nav>
         <div class="nav-container">
-            <a href="#edicao-atual">Edição Atual</a>
-            <a href="#sobre">Sobre o Periódico</a>
-            <a href="#expediente">Corpo Editorial</a>
-            <a href="#submissoes">Submissões</a>
-            <a href="https://eap42.blog" target="_blank" rel="noopener">Blog (Estação AP42) ↗</a>
+            <div class="nav-links">
+                <a href="#edicao-atual">Edição Atual</a>
+                <a href="#sobre">Sobre o Periódico</a>
+                <a href="#expediente">Corpo Editorial</a>
+                <a href="#submissoes">Submissões</a>
+                <a href="https://eap42.blog" target="_blank" rel="noopener">Blog (Estação AP42) ↗</a>
+            </div>
+            <div class="lang-select">
+                <span>Idioma:</span>
+                <a href="#" class="active" title="Português">PT</a> |
+                <a href="#" title="English">EN</a> |
+                <a href="#" title="Español">ES</a>
+            </div>
         </div>
     </nav>
 
     <main>
-        <!-- EDIÇÃO ATUAL -->
+        <!-- EDIÇÃO ATUAL COM IMAGEM DA CAPA -->
         <section id="edicao-atual">
             <h2>Edição Atual — Vol. 1, Nº 1 (2026)</h2>
             
             <div class="issue-header">
-                <div class="issue-cover">
-                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">Cadernos Estação</span>
-                    <strong style="font-size: 1rem; margin: 0.4rem 0;">Vol. 1<br>Nº 1</strong>
-                    <span style="font-size: 0.65rem;">jul./dez. 2026</span>
-                </div>
+                <img src="boneca_revista_capa_page-0001.jpg" alt="Capa da Revista Cadernos Estação Vol 1 Nº 1" class="issue-cover-img">
                 <div class="issue-info">
                     <h3>Dossiê Inaugural: Agência Humana, Técnica e Cuidado</h3>
                     <p>Publicado em: 25 de Agosto de 2026 | Acesso Aberto (Diamond Open Access)</p>
@@ -426,7 +471,7 @@
             <h2>Corpo Editorial e Expediente</h2>
             <ul style="list-style: none; padding-left: 0;">
                 <li style="margin-bottom: 0.5rem;"><strong>Editor-Chefe:</strong> Antonio Paulo Alves Carvalho</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Conselho Editorial:</strong> Prof. Luis Gustavo Alves Reinés da Silva (UNIAN)
+                <li style="margin-bottom: 0.5rem;"><strong>Conselho Editorial:</strong> Prof. Luis Gustavo Alves Reinés da Silva (UNIAN) 
                 <li style="margin-bottom: 0.5rem;"><strong>Chancela Editorial:</strong> KBOOKS Publicações & Ensino</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Periodicidade:</strong> Semestral (Julho / Dezembro)</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Localidade:</strong> São Gonçalo, Rio de Janeiro – Brasil</li>
@@ -454,12 +499,10 @@
         <p style="margin-top: 0.4rem; font-size: 0.75rem; color: #bbbbbb;">www.journalestacao.lat</p>
     </footer>
 
-    <!-- SCRIPT DO RELÓGIO E DATA DINÂMICA (ESTILO IMPRENSA) -->
+    <!-- SCRIPT DO RELÓGIO E DATA DINÂMICA -->
     <script>
         function updateJournalClock() {
             const now = new Date();
-            
-            // Formatador de data por extenso
             const optionsDate = { 
                 weekday: 'long', 
                 year: 'numeric', 
@@ -467,15 +510,12 @@
                 day: 'numeric' 
             };
             let dateStr = now.toLocaleDateString('pt-BR', optionsDate).toUpperCase();
-            
-            // Formatador de horas HH:MM:SS
             let timeStr = now.toLocaleTimeString('pt-BR');
             
             document.getElementById('journal-date-str').textContent = dateStr;
             document.getElementById('journal-clock').textContent = timeStr;
         }
 
-        // Atualiza a cada segundo
         setInterval(updateJournalClock, 1000);
         updateJournalClock();
     </script>
