@@ -237,23 +237,6 @@
             margin-bottom: 0.8rem;
         }
 
-        .btn-download {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .btn-download:hover {
-            background-color: #ffffff;
-            color: var(--primary);
-        }
-
         .article-card {
             border-bottom: 1px solid var(--border-light);
             padding: 1rem 0;
@@ -287,6 +270,11 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 0.4rem;
+        }
+
+        .article-links {
+            display: flex;
+            gap: 1rem;
         }
 
         .article-links a {
@@ -352,7 +340,7 @@
     <!-- BARRA DE DATA E RELÓGIO (ESTILO JORNAL) -->
     <div class="journal-datebar">
         <div class="journal-datebar-container">
-            <div>RIO DE JANEIRO, <span id="journal-date-str">QUINTA-FEIRA, 17 DE SETEMBRO DE 2026</span> — ANO I</div>
+            <div>RIO DE JANEIRO, <span id="journal-date-str">QUARTA-FEIRA, 23 DE SETEMBRO DE 2026</span> — ANO I</div>
             <div>HORA LOCAL: <span id="journal-clock">00:00:00</span></div>
         </div>
     </div>
@@ -385,70 +373,31 @@
                 <img src="boneca_revista_capa_page-0001.jpg" alt="Capa da Revista Cadernos Estação Vol 1 Nº 1" class="issue-cover-img">
                 <div class="issue-info">
                     <h3>Dossiê Inaugural: Agência Humana, Técnica e Cuidado</h3>
-                    <p>Publicado em: 25 de Agosto de 2026 | Acesso Aberto (Diamond Open Access)</p>
-                    <a href="BONECA-REVISTA-ESTACAO.pdf" class="btn-download">Baixar Edição Completa (PDF)</a>
+                    <p>Publicado em: 23 de Setembro de 2026 | Acesso Aberto (Diamond Open Access)</p>
                 </div>
             </div>
 
             <!-- SUMÁRIO DA EDIÇÃO -->
             <div class="toc">
-                <!-- Editorial -->
+                <!-- Artigo Farmacêutico -->
                 <div class="article-card">
-                    <span class="article-tag">Editorial</span>
-                    <div class="article-title">Carta ao Leitor: Pela Reintegração dos Saberes e a Democratização do Conhecimento</div>
-                    <div class="article-author">Antonio Paulo Alves Carvalho</div>
+                    <span class="article-tag">Artigo Científico</span>
+                    <div class="article-title">Fitoterápicos e Biodiversidade nos Biomas Brasileiros: Potencial Farmacológico, Conhecimento Popular e Conservação</div>
+                    <div class="article-author">Luis Gustavo Reinés Alves da Silva</div>
                     <div class="article-links">
-                        <a href="#">[ Ler Texto / PDF ]</a>
-                    </div>
-                </div>
-
-                <!-- Ensaio Principal -->
-                <div class="article-card">
-                    <span class="article-tag">Ensaio</span>
-                    <div class="article-title">O Existencialismo Ainda é um Humanismo: A Escrita e a Autenticidade na Era da IA</div>
-                    <div class="article-author">Antonio Paulo Alves Carvalho</div>
-                    <div class="article-links">
-                        <a href="#">[ Ler Ensaio / PDF ]</a>
+                        <a href="LUIS_GUSTAVO_ARTIGO.pdf" target="_blank">[ Ler Artigo / PDF ]</a>
+                        <a href="https://doi.org/10.5281/zenodo.22921666" target="_blank" rel="noopener">[ Página no Zenodo ]</a>
                     </div>
                 </div>
 
                 <!-- Entrevista Internacional -->
                 <div class="article-card">
                     <span class="article-tag">Entrevista Especial</span>
-                    <div class="article-title">Human-Centered AI, Criatividade e Superferramentas: Um Diálogo com Ben Shneiderman</div>
-                    <div class="article-author">Ben Shneiderman; Entrevistador: Antonio Paulo Alves Carvalho</div>
+                    <div class="article-title">Inteligência Artificial Centrada no Humano, Criatividade e Agência: Uma Entrevista com Ben Shneiderman</div>
+                    <div class="article-author">Antonio Paulo Alves Carvalho & Ben Shneiderman</div>
                     <div class="article-links">
-                        <a href="#">[ Ler Entrevista (PT/EN) / PDF ]</a>
-                    </div>
-                </div>
-
-                <!-- Artigo Farmacêutico -->
-                <div class="article-card">
-                    <span class="article-tag">Relato de Experiência / Saúde</span>
-                    <div class="article-title">O Cuidado Farmacêutico e a Prática Clínica no Cotidiano Comunitário</div>
-                    <div class="article-author">Luis Gustavo Alves Reinés da Silva</div>
-                    <div class="article-links">
-                        <a href="#">[ Ler Artigo / PDF ]</a>
-                    </div>
-                </div>
-
-                <!-- Entrevista STEM -->
-                <div class="article-card">
-                    <span class="article-tag">Diálogos em STEM</span>
-                    <div class="article-title">Mulheres em STEM, Educação Maker e Sustentabilidade</div>
-                    <div class="article-author">Viviane Japiassú Viana; Entrevistador: Antonio Paulo Alves Carvalho</div>
-                    <div class="article-links">
-                        <a href="#">[ Ler Entrevista / PDF ]</a>
-                    </div>
-                </div>
-
-                <!-- Tira / Arte Sequencial -->
-                <div class="article-card">
-                    <span class="article-tag">Arte Sequencial Clássica</span>
-                    <div class="article-title">Krazy Kat: Filosofia e Nonsense em Quadrinhos (Tradução e Adaptação)</div>
-                    <div class="article-author">George Herriman; Tradução: Antonio Paulo Alves Carvalho</div>
-                    <div class="article-links">
-                        <a href="#">[ Ver Tira / PDF ]</a>
+                        <a href="Carvalho_Shneiderman_2026_Entrevista.pdf" target="_blank">[ Ler Entrevista / PDF ]</a>
+                        <a href="https://doi.org/10.5281/zenodo.22923107" target="_blank" rel="noopener">[ Página no Zenodo ]</a>
                     </div>
                 </div>
             </div>
