@@ -218,14 +218,38 @@
             padding: 1.2rem;
         }
 
-        /* CORREÇÃO DO TAMANHO DA MINIATURA DA CAPA */
-        .issue-cover-img {
-            width: 120px;
-            max-width: 100%;
-            height: auto;
+        /* CARTÃO EDITORIAL DA CAPA (SUBSTITUTO DA IMAGEM PARA EVITAR FALHAS) */
+        .issue-cover-badge {
+            width: 130px;
+            height: 180px;
+            background: #1c1c1c;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem 0.8rem;
             border: 1px solid var(--border);
             box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
-            display: block;
+            text-align: center;
+        }
+
+        .issue-cover-badge .badge-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #cccccc;
+        }
+
+        .issue-cover-badge .badge-vol {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .issue-cover-badge .badge-year {
+            font-size: 0.65rem;
+            color: #aaaaaa;
         }
 
         .issue-info h3 {
@@ -278,6 +302,7 @@
         .article-links {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .article-links a {
@@ -319,7 +344,7 @@
             .header-titles { flex-direction: column; gap: 0.1rem; }
             .journal-datebar-container { flex-direction: column; text-align: center; gap: 0.2rem; }
             .issue-header { flex-direction: column; text-align: center; }
-            .issue-cover-img { margin: 0 auto; }
+            .issue-cover-badge { margin: 0 auto; }
             nav .nav-container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
         }
     </style>
@@ -368,12 +393,17 @@
     </nav>
 
     <main>
-        <!-- EDIÇÃO ATUAL COM IMAGEM DA CAPA -->
+        <!-- EDIÇÃO ATUAL COM BLOCO DE IDENTIDADE VISUAL EDITORIAL -->
         <section id="edicao-atual">
             <h2>Edição Atual — Vol. 1, Nº 1 (2026)</h2>
             
             <div class="issue-header">
-                <img src="Capa_Pronta-1.jpg" alt="Capa da Revista Cadernos Estação Vol 1 Nº 1" class="issue-cover-img">
+                <!-- Substituição elegante da imagem quebrada por cartão tipográfico -->
+                <div class="issue-cover-badge">
+                    <span class="badge-title">Cadernos Estação</span>
+                    <span class="badge-vol">Vol. 1<br>Nº 1</span>
+                    <span class="badge-year">Jul – Dez 2026</span>
+                </div>
                 <div class="issue-info">
                     <h3>Dossiê Inaugural: Agência Humana, Técnica e Cuidado</h3>
                     <p>Publicado em: 30 de Setembro de 2026 | Acesso Aberto (Diamond Open Access)</p>
@@ -387,12 +417,24 @@
             <div class="toc">
                 <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--primary); text-transform: uppercase;">Sumário da Edição</h3>
 
+                <!-- Carta ao Leitor -->
+                <div class="article-card">
+                    <span class="article-tag">Editorial / Manifesto</span>
+                    <div class="article-title">Carta ao Leitor: Manifesto pela Desmercantilização da Vida Intelectual</div>
+                    <div class="article-author">Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="Carta_ao_Leitor.pdf" target="_blank">[ Ler Texto / PDF ]</a>
+                        <a href="https://doi.org/10.5281/zenodo.23062677" target="_blank" rel="noopener">[ Página no Zenodo ]</a>
+                    </div>
+                </div>
+
                 <!-- Artigo Farmacêutico -->
                 <div class="article-card">
                     <span class="article-tag">Artigo Científico</span>
                     <div class="article-title">Fitoterápicos e Biodiversidade nos Biomas Brasileiros: Potencial Farmacológico, Conhecimento Popular e Conservação</div>
                     <div class="article-author">Luis Gustavo Reinés Alves da Silva</div>
                     <div class="article-links">
+                        <a href="LUIS_GUSTAVO_ARTIGO.pdf" target="_blank">[ Ler Artigo / PDF ]</a>
                         <a href="https://doi.org/10.5281/zenodo.22921666" target="_blank" rel="noopener">[ Página no Zenodo ]</a>
                     </div>
                 </div>
@@ -403,6 +445,7 @@
                     <div class="article-title">Inteligência Artificial Centrada no Humano, Criatividade e Agência: Uma Entrevista com Ben Shneiderman</div>
                     <div class="article-author">Antonio Paulo Alves Carvalho & Ben Shneiderman</div>
                     <div class="article-links">
+                        <a href="Carvalho_Shneiderman_2026_Entrevista.pdf" target="_blank">[ Ler Entrevista / PDF ]</a>
                         <a href="https://doi.org/10.5281/zenodo.22923107" target="_blank" rel="noopener">[ Página no Zenodo ]</a>
                     </div>
                 </div>
@@ -413,6 +456,7 @@
                     <div class="article-title">Human-Centered Artificial Intelligence, Creativity, and Agency: An Interview with Ben Shneiderman</div>
                     <div class="article-author">Antonio Paulo Alves Carvalho & Ben Shneiderman</div>
                     <div class="article-links">
+                        <a href="Carvalho_Shneiderman_2026_Interview.pdf" target="_blank">[ Read Interview / PDF ]</a>
                         <a href="https://doi.org/10.5281/zenodo.23050066" target="_blank" rel="noopener">[ Zenodo Page ]</a>
                     </div>
                 </div>
