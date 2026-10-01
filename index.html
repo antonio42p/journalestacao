@@ -218,7 +218,7 @@
             padding: 1.2rem;
         }
 
-        /* CARTÃO EDITORIAL DA CAPA (SUBSTITUTO DA IMAGEM PARA EVITAR FALHAS) */
+        /* CARTÃO EDITORIAL DA CAPA */
         .issue-cover-badge {
             width: 130px;
             height: 180px;
@@ -368,7 +368,7 @@
     <!-- BARRA DE DATA E RELÓGIO (ESTILO JORNAL) -->
     <div class="journal-datebar">
         <div class="journal-datebar-container">
-            <div>RIO DE JANEIRO, <span id="journal-date-str">QUARTA-FEIRA, 30 DE SETEMBRO DE 2026</span> — ANO I</div>
+            <div>RIO DE JANEIRO, <span id="journal-date-str"></span> — ANO I</div>
             <div>HORA LOCAL: <span id="journal-clock">00:00:00</span></div>
         </div>
     </div>
@@ -377,7 +377,7 @@
     <nav>
         <div class="nav-container">
             <div class="nav-links">
-                <a href="#edicao-atual">Edição Atual</a>
+                <a href="#numero-atual">Fascículo Atual</a>
                 <a href="#sobre">Sobre o Periódico</a>
                 <a href="#expediente">Corpo Editorial</a>
                 <a href="#submissoes">Submissões</a>
@@ -393,29 +393,29 @@
     </nav>
 
     <main>
-        <!-- EDIÇÃO ATUAL COM BLOCO DE IDENTIDADE VISUAL EDITORIAL -->
-        <section id="edicao-atual">
-            <h2>Edição Atual — Vol. 1, Nº 1 (2026)</h2>
+        <!-- NÚMERO ATUAL COM BLOCO DE IDENTIDADE VISUAL EDITORIAL -->
+        <section id="numero-atual">
+            <h2>Fascículo Atual — Vol. 1 No. 1 (jul./dez. 2026)</h2>
             
             <div class="issue-header">
                 <!-- Substituição elegante da imagem quebrada por cartão tipográfico -->
                 <div class="issue-cover-badge">
                     <span class="badge-title">Cadernos Estação</span>
-                    <span class="badge-vol">Vol. 1<br>Nº 1</span>
-                    <span class="badge-year">Jul – Dez 2026</span>
+                    <span class="badge-vol">Vol. 1<br>No. 1</span>
+                    <span class="badge-year">jul./dez. 2026</span>
                 </div>
                 <div class="issue-info">
                     <h3>Dossiê Inaugural: Agência Humana, Técnica e Cuidado</h3>
-                    <p>Publicado em: 30 de Setembro de 2026 | Acesso Aberto (Diamond Open Access)</p>
+                    <p>Publicado em: Outubro de 2026 | Acesso Aberto (Diamond Open Access)</p>
                     <div class="article-links" style="margin-top: 0.5rem;">
                         <a href="main.pdf" target="_blank">[ Descarregar Volume Completo (PDF) ]</a>
                     </div>
                 </div>
             </div>
 
-            <!-- SUMÁRIO DA EDIÇÃO -->
+            <!-- SUMÁRIO DO NÚMERO -->
             <div class="toc">
-                <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--primary); text-transform: uppercase;">Sumário da Edição</h3>
+                <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--primary); text-transform: uppercase;">Sumário do Número</h3>
 
                 <!-- Carta ao Leitor -->
                 <div class="article-card">
@@ -436,6 +436,26 @@
                     <div class="article-links">
                         <a href="LUIS_GUSTAVO_ARTIGO.pdf" target="_blank">[ Ler Artigo / PDF ]</a>
                         <a href="https://doi.org/10.5281/zenodo.22921666" target="_blank" rel="noopener">[ Página no Zenodo ]</a>
+                    </div>
+                </div>
+
+                <!-- NOVO ARTIGO 2 (ESPAÇO RESERVADO) -->
+                <div class="article-card">
+                    <span class="article-tag">Ensaio</span>
+                    <div class="article-title">[TÍTULO DO SEU NOVO ARTIGO / ENSAIO AQUI]</div>
+                    <div class="article-author">Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="#" target="_blank">[ Ler Artigo / PDF ]</a>
+                    </div>
+                </div>
+
+                <!-- NOVO ARTIGO 3 (ESPAÇO RESERVADO) -->
+                <div class="article-card">
+                    <span class="article-tag">Resenha Crítica</span>
+                    <div class="article-title">[TÍTULO DA SUA NOVA RESENHA AQUI]</div>
+                    <div class="article-author">Antonio Paulo Alves Carvalho</div>
+                    <div class="article-links">
+                        <a href="#" target="_blank">[ Ler Resenha / PDF ]</a>
                     </div>
                 </div>
 
@@ -482,7 +502,7 @@
                 <li style="margin-bottom: 0.5rem;"><strong>Editor-Chefe:</strong> Antonio Paulo Alves Carvalho</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Conselho Editorial:</strong> Prof. Luis Gustavo Alves Reinés da Silva (UNIAN)</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Chancela Editorial:</strong> KBOOKS Publicações & Ensino</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Periodicidade:</strong> Semestral (Julho / Dezembro)</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Periodicidade:</strong> Semestral</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Localidade:</strong> São Gonçalo, Rio de Janeiro – Brasil</li>
                 <li><strong>Contato Editorial:</strong> submissoes@journalestacao.lat</li>
             </ul>
@@ -490,7 +510,7 @@
 
         <!-- SUBMISSÕES -->
         <section id="submissoes">
-            <h2>Chamada de Trabalhos (Call for Papers) — Vol. 1, Nº 2</h2>
+            <h2>Chamada de Trabalhos (Call for Papers)</h2>
             <p>Recebemos em fluxo contínuo submissões de ensaios, artigos de revisão, relatos de experiência docente/clínica e resenhas nas seguintes áreas:</p>
             <ul style="margin: 0.8rem 0 0.8rem 1.2rem;">
                 <li>Interação Humano-Computador, Inteligência Artificial e Sociedade</li>
